@@ -1,63 +1,64 @@
-# Flavorodo - Cafe themed Pomodoro Timer
+# Flavorodo
 
-A cute, hopefully animated cafe-themed pomodor timer to help people focus and get tasks done ON TIME.
+Flavorodo is a sophisticated, cafe-themed Pomodoro productivity tool designed to help you stay focused and manage your daily tasks with ease. It combines a minimalist aesthetic with powerful productivity features to create a pleasant and efficient workspace.
 
-## Project Overview
+## Key Features
 
-Flavorodo is a web-based pomodoro timer featuring:
-- **25-minute work sessions** with cute cafe animations
-- **5-minute breaks** with relaxing coffee brewing animations
-- **15-minute long breaks** after 4 work sessions
-- **Adorable cafe-themed visuals** including coffee cups, pastries, and cozy cafe ambiance with steam animations
-- **Gentle sound effects** for notifications
-- **Session tracking** with visual progress indicators
-- **Responsive design** that works on all devices
+### Custom Pomodoro Timer
+A flexible timer tailored to your workflow:
+- Focus Work: Dedicated sessions for deep concentration.
+- Breaks: Integrated Short and Long Break durations to maintain peak performance.
+- Custom Durations: Easily adjust session lengths through the settings menu.
 
+### Daily Specials (Todo List)
+Manage your daily tasks with an integrated list:
+- Add tasks to your "order" for the day.
+- Mark tasks as completed or remove them from your list.
+- Minimalist design that keeps your objectives in focus.
 
-## Development Plan
+### Dynamic Cafe Ambiance
+Switch between themes to match your mood:
+- Sunny: A bright, energizing light mode.
+- Moonlit: A calm, focused dark mode with backdrop effects.
+- Glassmorphism UI: Premium, modern design with translucent overlays.
 
-### Phase 1: Next.js Setup and Core Structure
-- [ ] Initialize Next.js project with `npx create-next-app@latest flavorodo --typescript`
-- [ ] Set up TypeScript configs
-- [ ] Configure Tailwind for styling
-- [ ] Create project folder structure
+## Technology Stack
 
-### Phase 2: Core Components and State Management
-- [ ] Create TypeScript interfaces for timer state
-- [ ] Build custom `useTimer` hook with React hooks
-- [ ] Create main `Timer` component with countdown logic
-- [ ] Implement `CoffeeCup` component with CSS animations
-- [ ] Build `Controls` component (Start/Paause/Reset buttons)
-- [ ] Create `SessionTracker` component for visual progress
-- [ ] Set up state management with useState and useEffect
+The application is built using modern web development tools:
+- Next.js: React framework for performance and scalability.
+- React 19: Leveraging latest frontend capabilities.
+- Tailwind CSS 4: For sophisticated, responsive styling.
+- TypeScript: Ensuring code reliability and maintainability.
 
-###Phase 3: Styling with Tailwind & Animations
-- [ ] Configure Tailwind with custom cafe-themed colors
-- [ ] Style the main timer container with card design
-- [ ] Create coffee cup illustration using Tailwind utilities
-- [ ] Add CSS animations for steam effects
-- [ ] Style timer display with proper typography
-- [ ] Design control buttons with hover effects
-- [ ] Add floating pastry decorations with animations
-- [ ] Implement responsive design with Tailwind breakpoints
-- [ ] Add break-time theme variations
+## Getting Started
 
+### Local Development
 
-### Phase 4: Advanced Features & Interactivity
-- [ ] Add notification sound using Next.js audio handling
-- [ ] Implement browser notifications with Web Notifications API
-- [ ] Add settings panel for customizable durations
-- [ ] Implement keyboard shortcuts with event listeners
-- [ ] Add local storage for user preference
-- [ ] Create progress statistics tracking & dashboard
-- [ ] Add dark/light theme toggle (Sunny day, Moon night??)
+First, install the dependencies:
 
+```bash
+npm install
+```
 
-### Phase 5: Next.js Optimications & Deploy!
-- [ ] Optimize components with React.memo
-- [ ] Implement proper SEO with Next.js metadata
-- [ ] Add PWA capabilities for mobile app experience
-- [ ] Set up build optimization
-- [ ] Deploy to Vercel
-- [ ] Add analytics and error tracking
+Then, run the development server:
 
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Build for Production
+
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+## Learn More
+
+To learn more about the technologies used in this project:
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://react.dev)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
