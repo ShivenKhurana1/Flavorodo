@@ -133,7 +133,7 @@ export default function Timer() {
                 <div className="mb-4 text-center">
                     <span className={`font-sans text-xs uppercase tracking-[0.3em] font-bold opacity-40 transition-all duration-1000 ${isDarkMode ? 'text-white' : 'text-cafe-mocha'}`}>
                         {isBreak
-                            ? (sessionsCompleted > 0 && sessionsCompleted % 4 === 0 ? "Long Break" : "Short Break") : "Focus Worl"}
+                            ? (sessionsCompleted > 0 && sessionsCompleted % 4 === 0 ? "Long Break" : "Short Break") : "Focus Work"}
                     </span>
                 </div>
 
