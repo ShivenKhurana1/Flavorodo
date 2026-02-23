@@ -23,6 +23,7 @@ export default function Timer() {
     // Local UI States
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
+    const [settingsError, setSettingsError] = useState<string | null>(null);
 
     // Calculate progress based on the current session type
     const totalTime = isBreak
@@ -91,23 +92,43 @@ export default function Timer() {
                                     <span className="font-sans text-sm font-medium uppercase tracking-wider opacity-60">{item.label}</span>
                                     <input
                                         type="number"
+                                        min="1"
                                         defaultValue={item.val}
                                         onBlur={(e) => {
+                                            const val = parseInt(e.target.value);
+                                            if (isNaN(val) || val < 1) {
+                                                setSettingsError("Orders must be at least 1 minute.");
+                                                return;
+                                            }
+                                            setSettingsError(null);
                                             const newVals = {
                                                 work: workDuration / 60,
                                                 short: shortBreakDuration / 60,
                                                 long: longBreakDuration / 60,
-                                                [item.key]: parseInt(e.target.value) || 1
+                                                [item.key]: val
                                             };
                                             updateDurations(newVals.work, newVals.short, newVals.long);
                                         }}
-                                        className="w-16 bg-transparent border-b-2 border-current text-center font-sans font-bold text-lg focus:outline-none"
+                                        className={`w-16 bg-transparent border-b-2 text-center font-sans font-bold text-lg focus:outline-none transition-colors ${settingsError ? 'border-red-500 text-red-500' : 'border-current'
+                                            }`}
                                     />
                                 </div>
                             ))}
                         </div>
+
+                        {settingsError && (
+                            <div className="mt-6 p-3 rounded-xl bg-red-500/10 border border-red-500/20 animate-in fade-in slide-in-from-top-2 duration-300">
+                                <p className="font-sans text-xs font-bold text-red-500 uppercase tracking-wider text-center">
+                                    {settingsError}
+                                </p>
+                            </div>
+                        )}
+
                         <button
-                            onClick={() => setShowSettings(false)}
+                            onClick={() => {
+                                setShowSettings(false);
+                                setSettingsError(null);
+                            }}
                             className="mt-12 px-8 py-2 rounded-full border border-current font-sans text-xs uppercase tracking-widest hover:bg-current hover:text-white transition-all focus:outline-none"
                         >
                             Close
